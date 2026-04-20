@@ -4,6 +4,10 @@ public class Student extends User {
     float psp;
     private int iq;
 
+    static void hello(){
+        System.out.println("Student : static hello");
+    }
+
     public Student(){
         System.out.println("Student: Default constructor");
         this.name = "Akash";

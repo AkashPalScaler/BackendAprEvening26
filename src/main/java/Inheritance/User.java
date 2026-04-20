@@ -5,6 +5,10 @@ public class User {
     String email;
     private int age;
 
+    static void hello(){
+        System.out.println("User : static hello");
+    }
+
     public User(){
         System.out.println("User: Default constructor");
     }
