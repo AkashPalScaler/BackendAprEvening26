@@ -38,8 +38,8 @@ public class MultiThreadedMergeSort implements Callable<List<Integer>> {
         Future<List<Integer>> leftSortedArrFuture = es.submit(new MultiThreadedMergeSort(leftArrayToSort, es)); // 0.00x ms to start the left sort task
         Future<List<Integer>> rightSortedArrFuture = es.submit(new MultiThreadedMergeSort(rightArrayToSort, es)); // 0.00x ms to start the right sort task
 
-        List<Integer> leftSortedArr = leftSortedArrFuture.get(); // wait for 30 secs
-        List<Integer> rightSortedArr = rightSortedArrFuture.get(); // 0 secs
+        List<Integer> leftSortedArr = leftSortedArrFuture.get(); // wait for 25 secs
+        List<Integer> rightSortedArr = rightSortedArrFuture.get(); // 3mins-25secs
 
         return merge(leftSortedArr, rightSortedArr);
     }
@@ -74,3 +74,5 @@ public class MultiThreadedMergeSort implements Callable<List<Integer>> {
         return sortedArray;
     }
 }
+
+// List<Int> res = call();
