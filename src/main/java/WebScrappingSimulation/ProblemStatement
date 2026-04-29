@@ -1,0 +1,23 @@
+Objective -
+Understand the difference between FixedThreadPool and CachedThreadPool by simulating a web scraper.
+
+Problem Statement -
+Given a list of 100 URLs (e.g., "http://example.com/pageX"), simulate fetching the page content using Thread.sleep(200ms).
+Implement two versions:
+Use a FixedThreadPool(10) to process 10 URLs at a time.
+Use a CachedThreadPool to process them dynamically.
+Compare the execution time for both approaches.
+
+
+Solution
+A web scraper is a program that extracts data from websites. Since scrapers are independent of each other, we can execute them in parallel.
+Each task (a single thread's job) is to scrape a single URL. We use Callable<Void> instead of Runnable to know when the task is over.
+
+In the Client class:
+
+Create a list of dummy URLs.
+Initialize two executors: FixedThreadPool(10) and CachedThreadPool().
+Submit the tasks and record execution time for each executor.
+Use Future.get() to wait for all tasks.
+
+If you use Runnable instead of Callable, you cannot wait for completion. The loop ends almost immediately.
