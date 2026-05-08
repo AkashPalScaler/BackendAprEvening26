@@ -2,6 +2,7 @@ package ComparableAndComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Client {
@@ -33,5 +34,10 @@ public class Client {
         for(Item item : items){
             System.out.println("Item Id : " + item.getId() + " | Item name : " + item.getName());
         }
+
+//        Inventory<Electronics> inventory = new Inventory<>();
+//        Inventory<Books> inventory1 = new Inventory<Books>();
+//        Inventory<Item> inventory2 = new Inventory<>();
+
     }
 }
