@@ -101,5 +101,32 @@ public class Client {
                 .toList();
         System.out.println(res7);
 
+        // Reduce (terminal operation)- aggregates elements of an array into a single value/collection
+        int sum1 = 0;
+        for(Integer num : nums){
+            sum1 = sum1 + num;
+        }
+        System.out.println(sum1);
+        // 1, 3, 5
+        // Reduce for summation
+        Integer sum2 = nums.stream()
+                .reduce(0, (total , element) -> {
+                    return total + element; //summation till now
+                });
+        System.out.println(sum2);
+
+        // Reduce for findMax
+        Integer maxVal = nums.stream()
+                .limit(10)
+                .distinct()
+                .reduce(Integer.MIN_VALUE, (max, element) -> {
+                    //max till now
+                    return Math.max(max, element);
+                });
+        System.out.println(maxVal);
+
+        // Factorial value of n using reduce
+
+
     }
 }
